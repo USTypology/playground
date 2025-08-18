@@ -9,6 +9,13 @@
 </head>
 <body>
   <header>
+    <div class="mango-sky" aria-hidden="true">
+      <div class="mango m1"></div>
+      <div class="mango m2"></div>
+      <div class="mango m3"></div>
+      <div class="mango m4"></div>
+      <div class="mango m5"></div>
+    </div>
     <h1>Mango Myths & Facts</h1>
     <p class="tagline">Clearing up misconceptions about mangoes, natural sugar, and diabetes.</p>
     <nav>
@@ -17,9 +24,11 @@
         <li><a href="#facts">Facts</a></li>
         <li><a href="#nutrition">Nutrition</a></li>
         <li><a href="#tips">Healthy Tips</a></li>
+        <li><a href="#reviews">Reviews</a></li>
         <li><a href="#sources">Sources</a></li>
       </ul>
     </nav>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
   </header>
 
   <main>
@@ -80,11 +89,47 @@
       </ul>
       <p class="disclaimer">Educational purposes only; not medical advice. For personalized guidance, consult a qualified health professional.</p>
     </section>
+
+    <section id="reviews" class="panel reviews" aria-labelledby="reviews-heading">
+      <h2 id="reviews-heading">What Readers Say</h2>
+      <div class="reviews-shell">
+        <div class="review-track" id="review-track">
+          <article class="review" aria-label="Review 1">
+            <p class="quote">“Clear, factual, and easy to understand. I finally know how mango fits in my glucose-friendly meals.”</p>
+            <p class="author">— Jamie R., Dietetic Student</p>
+          </article>
+          <article class="review" aria-label="Review 2">
+            <p class="quote">“Love the portion calculator. Super handy in clinic when educating patients about fruit servings.”</p>
+            <p class="author">— Dr. Patel, Endocrinologist</p>
+          </article>
+          <article class="review" aria-label="Review 3">
+            <p class="quote">“Myth busted. This site replaced confusion with confidence.”</p>
+            <p class="author">— Alex K., Fitness Coach</p>
+          </article>
+          <article class="review" aria-label="Review 4">
+            <p class="quote">“Balanced, source-backed info without the fear-mongering I see elsewhere.”</p>
+            <p class="author">— Priya N., Health Blogger</p>
+          </article>
+          <article class="review" aria-label="Review 5">
+            <p class="quote">“Design is cheerful and the animated mangoes made me smile.”</p>
+            <p class="author">— Marcus W., UI Enthusiast</p>
+          </article>
+        </div>
+        <div class="review-controls" role="group" aria-label="Review carousel controls">
+          <button class="rev-btn prev" id="rev-prev" aria-label="Previous review">◀</button>
+          <div class="dots" id="rev-dots" aria-hidden="true"></div>
+          <button class="rev-btn next" id="rev-next" aria-label="Next review">▶</button>
+        </div>
+      </div>
+      <p class="note">Reviews are illustrative / anonymized for demonstration purposes.</p>
+    </section>
   </main>
 
   <footer>
     <p>&copy; <span id="year"></span> Mango Myths & Facts</p>
   </footer>
+
+  <button id="to-top" class="to-top" aria-label="Back to top">↑</button>
 
   <script src="script.js"></script>
 </body>
