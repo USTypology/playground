@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Inject minimal CSS for panel animation states (in JS to avoid clutter)
   const style = document.createElement('style');
-  style.textContent = `.panel.pre{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1);} .panel.in{opacity:1;transform:translateY(0);}`;
+  style.textContent = `.panel.pre{opacity:0;transition:opacity .85s cubic-bezier(.4,0,.2,1),transform .9s cubic-bezier(.4,0,.2,1);} .panel.in{opacity:1;}`;
   document.head.appendChild(style);
 
   // Reviews carousel

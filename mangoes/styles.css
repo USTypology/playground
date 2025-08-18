@@ -97,6 +97,34 @@ body.dark nav a:hover, body.dark nav a:focus { background:#fff; color:#222; }
 body.dark .review { background: linear-gradient(135deg,#2a240f,#1f1f1f 60%); }
 body.dark .mango { box-shadow: 0 4px 10px -2px rgba(0,0,0,.8); }
 
+/* Side decorative mango photos (simulated with gradients and masks) */
+.side-decor { position: fixed; top:0; bottom:0; width:120px; display:flex; flex-direction:column; justify-content:space-around; gap:2rem; padding:1rem .25rem; pointer-events:none; opacity:.75; filter: drop-shadow(0 4px 12px rgba(0,0,0,.25)); mix-blend-mode:multiply; }
+.side-decor.left { left:0; }
+.side-decor.right { right:0; }
+.mango-pic { width:100px; height:140px; background: radial-gradient(circle at 30% 25%, #fff6cc, #ffb347 55%, #ff9800 90%); border-radius:60% 40% 55% 45% / 55% 45% 60% 40%; position:relative; animation: floatY 9s ease-in-out infinite; }
+.mango-pic::after { content:""; position:absolute; top:-14px; left:46px; width:28px; height:34px; background: radial-gradient(circle at 30% 30%, #449a3f,#2e7d32); border-radius:40% 60% 50% 50%; transform: rotate(25deg); }
+.mango-pic.mp2 { animation-delay: -2s; }
+.mango-pic.mp3 { animation-delay: -4s; }
+.mango-pic.mp4 { animation-delay: -1s; }
+.mango-pic.mp5 { animation-delay: -3s; }
+.mango-pic.mp6 { animation-delay: -5s; }
+@keyframes floatY { 0%,100% { transform: translateY(-12px) rotate(2deg);} 50% { transform: translateY(12px) rotate(-4deg);} }
+
+@media (max-width: 1100px) { .side-decor { display:none; } }
+
+/* Horizontal whoosh entrance */
+.panel.pre[data-anim="left"] { transform: translate(-60px, 20px); }
+.panel.pre[data-anim="right"] { transform: translate(60px, 20px); }
+.panel.in[data-anim] { transform: translate(0,0) !important; }
+
+/* Add subtle whoosh trail using pseudo element */
+.panel.in::before { content:""; position:absolute; inset:0; background:radial-gradient(circle at 10% 10%, rgba(255,255,255,.6),rgba(255,255,255,0) 60%); opacity:0; animation: whoosh 1.2s ease-out forwards; pointer-events:none; mix-blend-mode:overlay; }
+@keyframes whoosh { 0% { opacity:.9; filter: blur(12px); transform: scaleX(0.7) translateX(-40px);} 60% { opacity:.15; } 100% { opacity:0; filter: blur(18px); transform: scaleX(1) translateX(0);} }
+
+/* Smooth scroll snap for sections to feel crisp */
+main { scroll-behavior:smooth; }
+@media (min-width:900px) { html { scroll-snap-type: y proximity; } .panel { scroll-snap-align: start; } }
+
 /* Reduce motion accessibility */
 @media (prefers-reduced-motion: reduce) {
   .mango, .panel::after, .review-track { animation: none !important; transition: none !important; }
