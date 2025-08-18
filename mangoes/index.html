@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mango Myths & Facts</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Evidence-based look at mango nutrition, myths about sugar, and diabetes risk." />
+</head>
+<body>
+  <header>
+    <h1>Mango Myths & Facts</h1>
+    <p class="tagline">Clearing up misconceptions about mangoes, natural sugar, and diabetes.</p>
+    <nav>
+      <ul>
+        <li><a href="#myth">Myth</a></li>
+        <li><a href="#facts">Facts</a></li>
+        <li><a href="#nutrition">Nutrition</a></li>
+        <li><a href="#tips">Healthy Tips</a></li>
+        <li><a href="#sources">Sources</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="myth" class="panel warning">
+      <h2>The Myth</h2>
+      <p>"Mangoes should be made illegal because they give people diabetes."</p>
+      <p class="debunk">This claim is false. No single fruit causes diabetes. Type 2 diabetes develops from a combination of factors including genetics, overall diet quality, physical activity level, and body composition over time.</p>
+    </section>
+
+    <section id="facts" class="panel facts">
+      <h2>Key Facts</h2>
+      <ul>
+        <li>Mangoes contain natural sugars along with fiber, vitamins (especially vitamin C & A precursors), and polyphenols.</li>
+        <li>Fiber and polyphenols can help moderate post-meal blood glucose responses.</li>
+        <li>Portion size matters: a typical serving is about 3/4 to 1 cup (100–150 g).</li>
+        <li>Whole fruits are linked with <em>lower</em> risk of type 2 diabetes when part of balanced eating patterns.</li>
+        <li>Replacing ultra-processed sweets with whole fruit generally improves diet quality.</li>
+      </ul>
+    </section>
+
+    <section id="nutrition" class="panel nutrition">
+      <h2>Nutrition Snapshot (1 cup diced mango ~165 g)</h2>
+      <div class="grid">
+        <div><strong>Calories</strong><br/>99</div>
+        <div><strong>Carbs</strong><br/>25 g</div>
+        <div><strong>Fiber</strong><br/>2.6 g</div>
+        <div><strong>Sugar (natural)</strong><br/>23 g</div>
+        <div><strong>Vitamin C</strong><br/>~67% DV</div>
+        <div><strong>Vitamin A (RAE)</strong><br/>~10% DV</div>
+        <div><strong>Folate</strong><br/>~18% DV</div>
+        <div><strong>Potassium</strong><br/>~6% DV</div>
+      </div>
+      <p class="note">Values are approximate; sources: USDA FoodData Central.</p>
+    </section>
+
+    <section id="tips" class="panel tips">
+      <h2>Enjoy Mangoes Smartly</h2>
+      <ol>
+        <li>Pair with protein (e.g., Greek yogurt) or healthy fats (e.g., nuts) to slow glucose absorption.</li>
+        <li>Use mango to sweeten smoothies instead of added sugars.</li>
+        <li>Balance your plate: half non-starchy veggies, a quarter lean protein, a quarter whole grains or starchy carbs, plus fruit.</li>
+        <li>Mind total energy intake—overall patterns matter more than any single food.</li>
+      </ol>
+      <form id="portion-form" aria-label="Portion size helper">
+        <label for="grams">Enter mango grams:</label>
+        <input type="number" id="grams" name="grams" value="100" min="10" step="10" />
+        <button type="submit">Estimate Nutrition</button>
+      </form>
+      <div id="estimates" class="estimates" aria-live="polite"></div>
+    </section>
+
+    <section id="sources" class="panel sources">
+      <h2>Sources</h2>
+      <ul>
+        <li>USDA FoodData Central. Mango, raw.</li>
+        <li>Muraki et al. (2013). Fruit consumption and risk of type 2 diabetes. <em>BMJ</em>.</li>
+        <li>Schwingshackl et al. (2017). Fruit and vegetable consumption and chronic disease risk. <em>Int J Epidemiol</em>.</li>
+      </ul>
+      <p class="disclaimer">Educational purposes only; not medical advice. For personalized guidance, consult a qualified health professional.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Mango Myths & Facts</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

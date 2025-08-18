@@ -1,0 +1,42 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.5;
+  color: #222;
+  background: #fffef9;
+}
+header {
+  background: linear-gradient(90deg,#ffb347,#ffcc33);
+  color: #222;
+  padding: 1.5rem 1rem 2rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+header h1 { margin: 0 0 .5rem; font-size: clamp(1.8rem,4vw,2.6rem); }
+.tagline { margin: 0 0 1rem; font-weight: 500; }
+nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+nav a { text-decoration: none; padding: .4rem .75rem; border-radius: 999px; background: rgba(255,255,255,.35); color: #222; font-weight: 600; font-size: .9rem; }
+nav a:hover, nav a:focus { background: #fff; outline: 2px solid #222; }
+main { max-width: 1000px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+.panel { background: #fff; border-radius: 16px; padding: 1.5rem 1.25rem 2rem; margin-bottom: 2rem; box-shadow: 0 4px 16px -4px rgba(0,0,0,.08), 0 2px 4px -1px rgba(0,0,0,.04); }
+.panel h2 { margin-top: 0; font-size: 1.4rem; }
+.warning { border-left: 6px solid #ff7f36; }
+.facts { border-left: 6px solid #ffa726; }
+.nutrition { border-left: 6px solid #ffca28; }
+.tips { border-left: 6px solid #66bb6a; }
+.sources { border-left: 6px solid #42a5f5; }
+.debunk { font-weight: 600; color: #b34a00; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(120px,1fr)); gap: .75rem; margin: 1rem 0 1.25rem; }
+.grid > div { background: #fff9ea; border: 1px solid #f7e2a5; padding: .75rem .5rem; border-radius: 12px; text-align: center; font-size: .85rem; }
+.note { font-size: .75rem; color: #555; }
+ol { padding-left: 1.1rem; }
+#portion-form { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; margin-top: 1rem; }
+#portion-form input { padding: .4rem .5rem; width: 120px; }
+#portion-form button { padding: .5rem .9rem; background: #ffb347; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; }
+#portion-form button:hover, #portion-form button:focus { background: #ff9800; }
+.estimates { margin-top: 1rem; font-size: .9rem; background: #f6fff5; border: 1px solid #c8e6c9; padding: .75rem .9rem; border-radius: 8px; min-height: 2rem; }
+footer { text-align: center; padding: 2rem 1rem; background: #222; color: #eee; }
+@media (prefers-color-scheme: dark) { body { background: #151515; color: #e6e6e6; } .panel { background:#1f1f1f; box-shadow: 0 4px 16px -4px rgba(0,0,0,.6); } .grid > div { background:#2a240f; border-color:#4a4020; } nav a { background: rgba(255,255,255,.15); color:#fff; } nav a:hover, nav a:focus { background:#fff; color:#222; } footer { background:#000; } }
