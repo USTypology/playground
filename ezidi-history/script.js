@@ -160,4 +160,44 @@ document.addEventListener('DOMContentLoaded', () => {
   const firstEvent = track?.querySelector('.t-event');
   if(firstEvent){ firstEvent.classList.add('active'); }
   activateEvent(firstEvent);
+
+  /* Story pagination */
+  const pages = Array.from(document.querySelectorAll('.story-page'));
+  let storyIndex = 0;
+  function showPage(idx, direction){
+    if(idx<0 || idx>=pages.length || idx===storyIndex) return;
+    const current = pages[storyIndex];
+    const next = pages[idx];
+    const forward = idx > storyIndex;
+    current.classList.remove('active');
+    current.classList.add(forward? 'exit-left':'exit-right');
+    setTimeout(()=> { current.classList.remove('exit-left','exit-right'); current.style.display='none'; },700);
+    next.style.display='';
+    requestAnimationFrame(()=> next.classList.add('active'));
+    storyIndex = idx;
+    document.body.setAttribute('data-story-index', String(storyIndex));
+    updateControls();
+  }
+  function updateControls(){
+    const prev = document.getElementById('prev-page');
+    const next = document.getElementById('next-page');
+    if(prev) prev.disabled = storyIndex===0;
+    if(next) next.disabled = storyIndex===pages.length-1;
+  }
+  // Initialize pages
+  pages.forEach((p,i)=> { if(i!==0) { p.style.display='none'; } else { p.classList.add('active'); } });
+  document.body.setAttribute('data-story-index','0');
+  updateControls();
+  document.getElementById('prev-page')?.addEventListener('click',()=> showPage(storyIndex-1,'prev'));
+  document.getElementById('next-page')?.addEventListener('click',()=> showPage(storyIndex+1,'next'));
+  // Keyboard navigation
+  document.addEventListener('keydown', e => {
+    if(e.altKey || e.metaKey || e.ctrlKey) return;
+    if(e.key==='ArrowRight' || e.key==='PageDown'){ showPage(storyIndex+1,'next'); }
+    if(e.key==='ArrowLeft' || e.key==='PageUp'){ showPage(storyIndex-1,'prev'); }
+  });
+  // Touch swipe (basic)
+  let touchStartX=0; let touchStartY=0;
+  document.addEventListener('touchstart', e => { const t=e.touches[0]; touchStartX=t.clientX; touchStartY=t.clientY; }, {passive:true});
+  document.addEventListener('touchend', e => { const t=e.changedTouches[0]; const dx=t.clientX - touchStartX; const dy=t.clientY - touchStartY; if(Math.abs(dx)>60 && Math.abs(dy)<80){ if(dx<0) showPage(storyIndex+1,'next'); else showPage(storyIndex-1,'prev'); } }, {passive:true});
 });

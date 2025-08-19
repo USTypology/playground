@@ -9,6 +9,10 @@
 </head>
 <body>
   <header>
+    <div class="hero-media">
+      <img src="hero.jpg" alt="Pilgrims gathered at the Lalish temple complex" />
+      <div class="hero-overlay"></div>
+    </div>
     <h1>Yazidi (Êzidî) History & Resilience</h1>
     <p class="tagline">An educational overview honoring a community's culture, trials, and ongoing recovery.</p>
     <nav>
@@ -27,12 +31,12 @@
         <button class="lang-btn" data-lang="ku" aria-pressed="false">KUR</button>
       </div>
   </header>
-  <main>
-      <section id="overview" class="panel">
+  <main class="story-stage" id="story-stage">
+    <section id="overview" class="panel story-page" data-page="0">
         <h2 data-i18n="overview_title">Overview</h2>
         <p data-i18n="overview_body">The Yazidis (Êzidî) are an ethno-religious minority indigenous to regions of present-day northern Iraq (especially Sinjar and Shekhan), Syria, Turkey, and Armenia, with a growing global diaspora. Their tradition blends ancient Mesopotamian, Zoroastrian, and other West Asian influences, forming a distinct monotheistic faith centered on reverence for God (Xwedê) and seven holy beings.</p>
     </section>
-    <section id="beliefs" class="panel">
+  <section id="beliefs" class="panel story-page" data-page="1">
         <h2 data-i18n="beliefs_title">Beliefs & Practices</h2>
       <ul>
           <li data-i18n="beliefs_li1">Monotheistic belief in one Creator (Xwedê).</li>
@@ -43,7 +47,7 @@
       </ul>
         <p class="note" data-i18n="beliefs_note">Mischaracterizations have fueled prejudice; understanding Yazidi theology in its own context is essential for respectful dialogue.</p>
     </section>
-    <section id="timeline" class="panel">
+  <section id="timeline" class="panel story-page" data-page="2">
         <h2 data-i18n="timeline_title">Brief Historical Timeline</h2>
         <div class="timeline-visual" aria-label="Interactive historical timeline">
           <div class="timeline-track" id="timeline-track">
@@ -86,12 +90,12 @@
           <li data-i18n="t_2014_body"><strong>2014:</strong> ISIS assault on Sinjar recognized by the UN and multiple governments as genocide.</li>
         </ul>
     </section>
-    <section id="2014" class="panel warning">
+  <section id="2014" class="panel warning story-page" data-page="3">
         <h2 data-i18n="g2014_title">2014 Genocide (Sinjar)</h2>
         <p data-i18n="g2014_p1">In August 2014, ISIS (Islamic State) forces attacked Yazidi communities in the Sinjar (Şingal) region. Thousands were killed or abducted; women and girls were subjected to sexual slavery; boys were forcibly indoctrinated; mass graves were created. The assault displaced an estimated hundreds of thousands, many fleeing to Mount Sinjar where they faced starvation and dehydration before humanitarian corridors were established.</p>
         <p data-i18n="g2014_p2">International bodies, including the United Nations, the European Parliament, and governments such as the United States, have recognized these acts as genocide. Documentation continues to identify perpetrators, exhume mass graves, and support prosecutions.</p>
     </section>
-    <section id="resilience" class="panel">
+  <section id="resilience" class="panel story-page" data-page="4">
         <h2 data-i18n="res_title">Community Resilience & Recovery</h2>
       <ul>
           <li data-i18n="res_li1">Survivor advocacy groups documenting abuses and pressing for accountability.</li>
@@ -101,7 +105,7 @@
           <li data-i18n="res_li5">Legal reforms in some jurisdictions to recognize genocide survivors' rights.</li>
       </ul>
     </section>
-    <section id="support" class="panel callout">
+  <section id="support" class="panel callout story-page" data-page="5">
         <h2 data-i18n="sup_title">How to Support (General Guidance)</h2>
       <ul>
           <li data-i18n="sup_li1">Engage with reputable human rights organizations working on Yazidi recovery.</li>
@@ -111,7 +115,7 @@
       </ul>
         <p class="note" data-i18n="sup_note">Always vet charities for transparency and effectiveness.</p>
     </section>
-    <section id="sources" class="panel sources">
+  <section id="sources" class="panel sources story-page" data-page="6">
         <h2 data-i18n="src_title">Sources & Further Reading</h2>
         <ul class="sources-list">
           <li><strong>UNITAD Reports</strong> – UN Investigative Team for Accountability of ISIL Crimes.</li>
@@ -125,6 +129,11 @@
         <p class="disclaimer" data-i18n="src_disclaimer">Educational resource only; summarizes complex history—consult specialized literature for depth.</p>
     </section>
   </main>
+  <nav class="story-nav" aria-label="Story navigation">
+    <button id="prev-page" class="story-btn" aria-label="Previous section" disabled>&larr;</button>
+    <div id="story-progress" class="story-progress" aria-hidden="true"></div>
+    <button id="next-page" class="story-btn" aria-label="Next section">&rarr;</button>
+  </nav>
   <footer>
       <p>&copy; <span id="year"></span> <span data-i18n="footer">Yazidi History & Resilience</span></p>
   </footer>
