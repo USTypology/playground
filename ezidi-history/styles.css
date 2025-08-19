@@ -2,7 +2,9 @@
 body { margin:0; font-family: system-ui, "Segoe UI", Roboto, Arial, sans-serif; line-height:1.55; background:#f8f9fb; color:#1f252b; }
 header { background:#243447; color:#f1f5f9; padding:0 1rem 2.2rem; text-align:center; position:relative; overflow:hidden; }
 header .hero-media { position:relative; width:100%; height:300px; max-height:40vh; overflow:hidden; border-bottom:4px solid #1d2a36; }
-header .hero-media img { width:100%; height:100%; object-fit:cover; display:block; filter: brightness(.9) contrast(1.05); transform: scale(1.12); animation: slowZoom 22s linear infinite alternate; }
+header .hero-media img { width:100%; height:100%; object-fit:cover; display:block; filter: brightness(.9) contrast(1.05); transform: scale(1.12); animation: slowZoom 22s linear infinite alternate; position:absolute; inset:0; opacity:0; transition: opacity 1.4s ease; }
+header .hero-media .hero-slides { position:absolute; inset:0; }
+header .hero-media .hero-slides img.active { opacity:1; }
 header .hero-media img[src$='.svg'] { object-fit:contain; filter:none; transform:none; animation:none; background:#1e293b; }
 @keyframes slowZoom { from { transform: scale(1.12) translateY(0); } to { transform: scale(1.22) translateY(-10px); } }
 header .hero-overlay { position:absolute; inset:0; background:linear-gradient(to bottom,rgba(16,24,32,.55),rgba(16,24,32,.85)); }
