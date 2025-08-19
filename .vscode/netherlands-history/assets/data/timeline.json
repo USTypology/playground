@@ -1,0 +1,52 @@
+{
+  "timeline": [
+    {
+      "year": "Prehistoric Era",
+      "event": "The earliest human settlements in the Netherlands date back to around 8000 BC."
+    },
+    {
+      "year": "Roman Era",
+      "event": "The Romans establish control over parts of the Netherlands around 50 BC."
+    },
+    {
+      "year": "Middle Ages",
+      "event": "The formation of various feudal states and the rise of local nobility."
+    },
+    {
+      "year": "1581",
+      "event": "The Act of Abjuration is signed, declaring independence from Spanish rule."
+    },
+    {
+      "year": "1602",
+      "event": "The Dutch East India Company (VOC) is established, marking the start of Dutch colonial expansion."
+    },
+    {
+      "year": "1672",
+      "event": "The Dutch Republic faces the 'Disaster Year' with invasions from France and England."
+    },
+    {
+      "year": "1795",
+      "event": "The Batavian Revolution leads to the establishment of the Batavian Republic."
+    },
+    {
+      "year": "1815",
+      "event": "The Kingdom of the Netherlands is established after the defeat of Napoleon."
+    },
+    {
+      "year": "1940-1945",
+      "event": "The Netherlands is occupied by Nazi Germany during World War II."
+    },
+    {
+      "year": "1957",
+      "event": "The Netherlands becomes a founding member of the European Economic Community (EEC)."
+    },
+    {
+      "year": "2002",
+      "event": "The Euro is introduced as the official currency of the Netherlands."
+    },
+    {
+      "year": "Present",
+      "event": "The Netherlands is known for its progressive policies and active role in the European Union."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "welcome": "Welcome to the Netherlands History website!",
+  "introduction": "This website provides an overview of the rich history of the Netherlands, covering various significant periods and events.",
+  "sections": {
+    "prehistory": "Explore the early history of the Netherlands, including prehistoric settlements and cultures.",
+    "provincesFormation": "Learn about the formation of provinces and the political landscape of the Netherlands.",
+    "dutchGoldenAge": "Discover the Dutch Golden Age, a period of great wealth, cultural achievement, and global influence.",
+    "colonialTrade": "Understand the impact of colonial trade on the Netherlands and its economy.",
+    "enlightenmentReforms": "Examine the reforms during the Enlightenment that shaped modern Dutch society.",
+    "industrialization": "Investigate the industrialization process and its effects on the Dutch economy and society.",
+    "ww1Neutrality": "Read about the Netherlands' stance of neutrality during World War I.",
+    "ww2Occupation": "Learn about the occupation of the Netherlands during World War II and its consequences.",
+    "postwarReconstruction": "Explore the reconstruction efforts in the Netherlands after World War II.",
+    "europeanIntegration": "Discover the Netherlands' role in European integration and cooperation.",
+    "contemporaryNetherlands": "Get insights into the contemporary state of the Netherlands and its current challenges."
+  },
+  "footer": "© 2023 Netherlands History. All rights reserved."
+}
