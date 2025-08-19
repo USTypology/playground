@@ -17,6 +17,12 @@
             "request": "launch",
             "name": "Open index.html",
             "file": "c:\\Users\\Stude\\Documents\\GitHub\\playground\\mangoes\\index.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open ezidi-history index.html",
+            "file": "c:\\Users\\Stude\\Documents\\GitHub\\playground\\ezidi-history\\index.html"
         }
     ]
 }
