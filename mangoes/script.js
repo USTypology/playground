@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const yearSpan = document.getElementById('year');
   const themeToggle = document.getElementById('theme-toggle');
   const toTopBtn = document.getElementById('to-top');
+  const motionToggle = document.getElementById('motion-toggle');
   const reviewTrack = document.getElementById('review-track');
   const prevBtn = document.getElementById('rev-prev');
   const nextBtn = document.getElementById('rev-next');
@@ -124,4 +125,51 @@ document.addEventListener('DOMContentLoaded', () => {
   resetAuto();
   reviewTrack?.addEventListener('pointerenter', ()=> clearInterval(autoTimer));
   reviewTrack?.addEventListener('pointerleave', resetAuto);
+
+  // Reduced motion toggle
+  const storedMotion = localStorage.getItem('mango-motion');
+  if(storedMotion === 'reduce') document.body.classList.add('reduce-motion');
+  updateMotionIcon();
+  motionToggle?.addEventListener('click', () => {
+    document.body.classList.toggle('reduce-motion');
+    localStorage.setItem('mango-motion', document.body.classList.contains('reduce-motion') ? 'reduce' : 'normal');
+    updateMotionIcon();
+  });
+  function updateMotionIcon(){
+    if(!motionToggle) return;
+    motionToggle.textContent = document.body.classList.contains('reduce-motion') ? '🚫' : '🌀';
+  }
+
+  // Parallax effect (skip if reduced motion)
+  const layers = document.querySelectorAll('.parallax-layer');
+  function parallax(){
+    if(document.body.classList.contains('reduce-motion')) return;
+    const sc = window.scrollY || 0;
+    layers.forEach(l => {
+      const speed = l.classList.contains('layer-back') ? 0.15 : l.classList.contains('layer-mid') ? 0.3 : 0.45;
+      l.style.transform = `translateY(${sc * speed * -1}px)`;
+    });
+  }
+  window.addEventListener('scroll', parallax, { passive:true });
+  parallax();
+
+  // Lazy load fallback intersection observer for images without native support
+  if(!('loading' in HTMLImageElement.prototype)){
+    const imgObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if(e.isIntersecting){
+          const img = e.target;
+          const src = img.getAttribute('data-src');
+          if(src){ img.setAttribute('src', src); img.removeAttribute('data-src'); }
+          imgObserver.unobserve(img);
+        }
+      });
+    }, { rootMargin:'200px 0px' });
+    document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+      const src = img.getAttribute('src');
+      img.setAttribute('data-src', src);
+      img.removeAttribute('src');
+      imgObserver.observe(img);
+    });
+  }
 });

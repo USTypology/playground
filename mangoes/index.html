@@ -8,6 +8,9 @@
   <meta name="description" content="Evidence-based look at mango nutrition, myths about sugar, and diabetes risk." />
 </head>
 <body>
+  <div class="parallax-layer layer-back" aria-hidden="true"></div>
+  <div class="parallax-layer layer-mid" aria-hidden="true"></div>
+  <div class="parallax-layer layer-front" aria-hidden="true"></div>
   <div class="side-decor left" aria-hidden="true">
     <div class="mango-pic mp1"></div>
     <div class="mango-pic mp2"></div>
@@ -34,11 +37,13 @@
         <li><a href="#facts">Facts</a></li>
         <li><a href="#nutrition">Nutrition</a></li>
         <li><a href="#tips">Healthy Tips</a></li>
+    <li><a href="#gallery">Gallery</a></li>
         <li><a href="#reviews">Reviews</a></li>
         <li><a href="#sources">Sources</a></li>
       </ul>
     </nav>
     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+  <button id="motion-toggle" class="motion-toggle" aria-label="Toggle reduced motion">🌀</button>
   </header>
 
   <main>
@@ -132,6 +137,24 @@
         </div>
       </div>
       <p class="note">Reviews are illustrative / anonymized for demonstration purposes.</p>
+    </section>
+    <section id="gallery" class="panel gallery" data-anim="left" aria-labelledby="gallery-heading">
+      <h2 id="gallery-heading">Mango Gallery</h2>
+      <p>Stylized SVG mango illustrations (lazy loaded) to keep the page light.</p>
+      <div class="gallery-grid">
+        <figure>
+          <img loading="lazy" width="240" height="160" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='160'><defs><radialGradient id='g' cx='30%' cy='30%'><stop offset='0%' stop-color='%23fff6cc'/><stop offset='70%' stop-color='%23ffb347'/><stop offset='100%' stop-color='%23ff9800'/></radialGradient></defs><rect width='240' height='160' fill='%23fffef9'/><ellipse cx='120' cy='80' rx='70' ry='50' fill='url(%23g)'/><path d='M140 25c18 10 22 22 10 30-8-7-15-15-24-21 4-4 8-7 14-9Z' fill='%232e7d32'/></svg>" alt="Illustrated mango 1" />
+          <figcaption>Whole mango illustration</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" width="240" height="160" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='160'><defs><linearGradient id='s' x1='0' x2='1'><stop offset='0%' stop-color='%23ffcc33'/><stop offset='100%' stop-color='%23ff9800'/></linearGradient></defs><rect width='240' height='160' fill='%23fffef9'/><path d='M70 40h100v80c0 0-16 8-50 8s-50-8-50-8V40Z' fill='url(%23s)' stroke='%23e68900' stroke-width='3' stroke-linejoin='round'/><path d='M70 40c0 0 12-10 50-10s50 10 50 10' fill='none' stroke='%23d97700' stroke-width='3'/></svg>" alt="Illustrated sliced mango" />
+          <figcaption>Sliced mango stylization</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" width="240" height="160" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='160'><rect width='240' height='160' fill='%23fffef9'/><g transform='translate(70 30)'><rect width='40' height='40' rx='8' fill='%23ffb347'/><rect x='50' width='40' height='40' rx='8' fill='%23ffcb55'/><rect y='50' width='40' height='40' rx='8' fill='%23ffcb55'/><rect x='50' y='50' width='40' height='40' rx='8' fill='%23ffb347'/></g><text x='120' y='140' font-size='18' fill='%23cc7a00' font-family='Segoe UI' text-anchor='middle'>Cubes</text></svg>" alt="Mango cubes" />
+          <figcaption>Mango cubes grid</figcaption>
+        </figure>
+      </div>
     </section>
   </main>
 
