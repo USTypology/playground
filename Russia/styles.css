@@ -1,0 +1,97 @@
+* { box-sizing: border-box; }
+body { margin:0; font-family: system-ui, "Segoe UI", Roboto, Arial, sans-serif; line-height:1.55; background:#f8f9fb; color:#1f252b; }
+
+/* Soviet-themed header with red and gold colors */
+header { background:#8b1538; color:#f1f5f9; padding:0 1rem 2.2rem; text-align:center; position:relative; overflow:hidden; }
+header .hero-media { position:relative; width:100%; height:300px; max-height:40vh; overflow:hidden; border-bottom:4px solid #d4af37; }
+header .hero-media img { width:100%; height:100%; object-fit:cover; display:block; filter: brightness(.9) contrast(1.1) saturate(1.1); transform: scale(1.12); animation: sovietZoom 20s linear infinite alternate; position:absolute; inset:0; opacity:0; transition: opacity 1.4s ease; }
+header .hero-media .hero-slides { position:absolute; inset:0; }
+header .hero-media .hero-slides img.active { opacity:1; }
+header .hero-media img[src$='.svg'] { object-fit:contain; filter:none; transform:none; animation:none; background:#8b1538; }
+@keyframes sovietZoom { from { transform: scale(1.12) translateY(0); } to { transform: scale(1.22) translateY(-10px); } }
+header .hero-overlay { position:absolute; inset:0; background:linear-gradient(to bottom,rgba(139,21,56,.65),rgba(139,21,56,.85)); }
+header h1 { position:relative; z-index:1; margin-top:-180px; }
+header .tagline, header nav, .lang-switch { position:relative; z-index:1; }
+header h1 { margin:0 0 .75rem; font-size: clamp(2.2rem,4.5vw,3.2rem); letter-spacing:.8px; font-weight:700; text-shadow: 2px 2px 4px rgba(0,0,0,.5); color:#ffd700; }
+.tagline { margin:0 0 1rem; font-weight:600; max-width:780px; margin-inline:auto; color:#f1f5f9; text-shadow: 1px 1px 2px rgba(0,0,0,.3); }
+
+/* Soviet-themed navigation */
+nav ul { list-style:none; margin:0; padding:0; display:flex; gap:.75rem; justify-content:center; flex-wrap:wrap; }
+nav a { text-decoration:none; color:#f1f5f9; background:rgba(212,175,55,.2); padding:.6rem 1rem; border-radius:8px; font-size:.85rem; font-weight:700; letter-spacing:.6px; transition: all .25s; border: 2px solid rgba(212,175,55,.4); text-transform:uppercase; }
+nav a:hover, nav a:focus { background:rgba(212,175,55,.4); border-color:#d4af37; transform: translateY(-1px); }
+nav a.active { background:#d4af37; border-color:#d4af37; color:#8b1538; }
+
+/* Progress bar with Soviet colors */
+.top-progress { position:absolute; bottom:0; left:0; right:0; height:4px; background:rgba(212,175,55,.3); }
+.top-progress .bar { height:100%; background:#d4af37; width:0; transition: width .5s cubic-bezier(.4,0,.2,1); }
+
+/* Main content styling */
+main.story-stage { max-width: 1100px; margin:0 auto; padding:1.5rem 1rem 5rem; position:relative; }
+.story-page { opacity:0; transform: translateX(60px); position:absolute; inset:0 auto auto 0; width:100%; transition: opacity .9s cubic-bezier(.4,0,.2,1), transform .9s cubic-bezier(.4,0,.2,1); pointer-events:none; }
+.story-page.active { opacity:1; transform: translateX(0); position:relative; pointer-events:auto; }
+.story-page.exit-left { animation: swipeLeft .7s cubic-bezier(.55,.02,.26,1) forwards; }
+.story-page.exit-right { animation: swipeRight .7s cubic-bezier(.55,.02,.26,1) forwards; }
+@keyframes swipeLeft { to { opacity:0; transform: translateX(-120px) scale(.96); } }
+@keyframes swipeRight { to { opacity:0; transform: translateX(120px) scale(.96); } }
+
+/* Panels with Soviet-inspired styling */
+.panel { background:#ffffff; border-radius:18px; padding:1.6rem 1.3rem 2.1rem; margin-bottom:2rem; position:relative; box-shadow:0 4px 18px -4px rgba(139,21,56,.15), 0 2px 6px -1px rgba(0,0,0,.05); border-top: 4px solid #d4af37; }
+.panel .feature-img { margin:0 0 1.1rem; }
+.panel .feature-img img { width:100%; border-radius:14px; border:2px solid #d4af37; box-shadow:0 3px 12px -3px rgba(139,21,56,.3); display:block; }
+.panel .feature-img figcaption { font-size:.7rem; letter-spacing:.5px; margin-top:.4rem; opacity:.7; font-style:italic; }
+.panel h2 { margin-top:0; font-size:1.5rem; letter-spacing:.6px; color:#8b1538; font-weight:700; }
+.callout { border-left:6px solid #d4af37; background: linear-gradient(135deg, #fff9e6 0%, #ffffff 100%); }
+.sources { border-left:6px solid #8b1538; background: linear-gradient(135deg, #fdf2f4 0%, #ffffff 100%); }
+
+/* Soviet-themed timeline */
+.timeline-visual { margin-top:.5rem; background:linear-gradient(135deg, #fff9e6 0%, #f8f9fb 100%); border:2px solid #d4af37; border-radius:16px; padding:1.2rem 1rem 1.4rem; }
+.timeline-track { display:flex; gap:.75rem; overflow-x:auto; padding-bottom:.5rem; scrollbar-width:thin; }
+.timeline-track::-webkit-scrollbar { height:8px; }
+.timeline-track::-webkit-scrollbar-track { background:transparent; }
+.timeline-track::-webkit-scrollbar-thumb { background:#d4af37; border-radius:4px; }
+.t-event { background:#ffffff; border:2px solid #d4af37; border-radius:12px; padding:.7rem .9rem; cursor:pointer; min-width:120px; text-align:center; transition: all .25s; position:relative; overflow:hidden; }
+.t-event::before { content:""; position:absolute; top:0; left:0; right:0; height:3px; background:#8b1538; transform: scaleX(0); transition: transform .25s; }
+.t-event:hover::before, .t-event.active::before { transform: scaleX(1); }
+.t-event .year { display:block; font-size:.75rem; font-weight:700; color:#8b1538; margin-bottom:.2rem; letter-spacing:.5px; }
+.t-event .label { display:block; font-size:.7rem; font-weight:600; color:#666; text-transform:uppercase; letter-spacing:.4px; }
+.t-event:hover, .t-event:focus { background:#8b1538; border-color:#8b1538; transform: translateY(-2px); }
+.t-event:hover .year, .t-event:hover .label, .t-event:focus .year, .t-event:focus .label { color:#f1f5f9; }
+.t-event.active { background:#d4af37; border-color:#d4af37; }
+.t-event.active .year { color:#8b1538; }
+.t-event.active .label { color:#8b1538; }
+.timeline-detail { margin-top:1rem; background:#ffffff; border:2px solid #d4af37; border-radius:14px; padding:1rem 1.1rem 1.15rem; box-shadow:0 4px 12px -3px rgba(139,21,56,.08); }
+.timeline-detail h3 { margin-top:0; margin-bottom:.5rem; font-size:1.1rem; color:#8b1538; font-weight:700; }
+
+/* Footer styling */
+footer { text-align:center; padding:2rem 1rem; background:#8b1538; color:#f1f5f9; font-size:.85rem; }
+
+/* Soviet star decoration for special elements */
+.panel h2::before { content:"★"; color:#d4af37; margin-right:.5rem; font-size:1.2em; }
+
+/* Responsive design */
+@media (prefers-color-scheme: dark) { 
+  body { background:#0f1418; color:#e5ecf2; } 
+  .panel { background:#1c252d; box-shadow:0 4px 18px -4px rgba(139,21,56,.4), 0 2px 6px -1px rgba(0,0,0,.3); } 
+  .timeline-detail { background:#26323c; border-color:#d4af37; } 
+  .t-event { background:#26323c; } 
+  .timeline-visual { background:linear-gradient(135deg, #2a1f1f 0%, #1c252d 100%); }
+}
+
+@media (min-width: 680px) { 
+  .panel { padding:2.1rem 2rem 2.3rem; } 
+  header h1 { font-size: clamp(2.5rem,5vw,3.8rem); }
+}
+
+/* Additional Soviet-themed decorative elements */
+.callout::before { content:""; position:absolute; top:0; right:0; width:0; height:0; border-left:20px solid transparent; border-top:20px solid #d4af37; opacity:.3; }
+.sources::before { content:""; position:absolute; top:0; right:0; width:0; height:0; border-left:20px solid transparent; border-top:20px solid #8b1538; opacity:.3; }
+
+/* Animations for Soviet theme */
+@keyframes marchingAnts {
+  0% { background-position: 0 0; }
+  100% { background-position: 20px 0; }
+}
+
+.panel:hover { transform: translateY(-2px); transition: transform .3s ease; }
+
+.disclaimer { font-size:.75rem; opacity:.8; margin-top:1rem; font-style:italic; border-top:1px solid #ddd; padding-top:.75rem; }
